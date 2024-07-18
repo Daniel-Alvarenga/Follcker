@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "name": "Follower Tracker",
+  "version": "1.0",
+  "permissions": ["activeTab", "storage", "https://api.github.com/*"],
+  "background": {
+    "scripts": ["src/modules/background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*?tab=following*"],
+      "js": ["src/modules/content.js"]
+    }
+  ],
+  "browser_action": {
+    "default_popup": "src/view/index.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  }
+}
