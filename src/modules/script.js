@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
           toggleButton.classList.remove("on");
           statusText.textContent = "OFF";
 
-          browser.runtime.sendMessage({ action: "off" });
+          browser.runtime.sendMessage({ action: "removeElements" });
         }
       });
     });
@@ -59,6 +59,12 @@ document.addEventListener("DOMContentLoaded", function () {
       function () {
         saveButton.style.display = 'none';
         sucessMessage.style.display = 'flex';
+
+        setTimeout(() => {
+          saveButton.style.display = 'flex';
+          sucessMessage.style.display = 'none';
+            
+        }, 5000);
       }
     );
   });
