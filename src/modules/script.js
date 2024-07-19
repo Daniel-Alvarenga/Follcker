@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const toggleButton = document.getElementById("toggle-button");
+  const sucessMessage = document.getElementById("saved");
+  const saveButton = document.getElementById("save-button");
   const statusText = document.getElementById("status-text");
   const credentialsForm = document.getElementById("credentials-form");
   const usernameInput = document.getElementById("username");
@@ -55,7 +57,8 @@ document.addEventListener("DOMContentLoaded", function () {
         githubToken: githubToken,
       },
       function () {
-        alert("Credentials saved successfully!");
+        saveButton.style.display = 'none';
+        sucessMessage.style.display = 'flex';
       }
     );
   });
