@@ -10,7 +10,7 @@ It works by calling the github API with your credentials and checking whether a 
 
 ## How to Use
 
-[^1]: Create a GitHub token [here](https://github.com/settings/apps)
+- Create a GitHub token [here](https://github.com/settings/apps)
   The permissions would be like:
   - [x] user
     - [x] user:read 
@@ -18,10 +18,9 @@ It works by calling the github API with your credentials and checking whether a 
     - [x] user:follow 
 
 
-[^2]: Open the extension popup in your browser extensions tab and save your user name and your created token
-![image](https://github.com/user-attachments/assets/a23a220c-6e37-4f04-b2c1-84d36f89c3e4)
+- Open the extension popup in your browser extensions tab and save your user name and your created token
 
-[^3]: Certify the extension is ON
+- Certify the extension is ON
 
 
 >[!warning]
