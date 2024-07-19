@@ -1,5 +1,6 @@
 {
-  "manifest_version": 3,
+  "author": "Daniel R. Alvarenga",
+  "manifest_version": 2,
   "name": "Follcker",
   "version": "1.0",
   "permissions": ["activeTab", "storage", "https://api.github.com/*"],
@@ -14,11 +15,11 @@
     }
   ],
   "browser_action": {
-    "default_popup": "src/view/index.html",
+    "default_popup": "src/view/popup.html",
     "default_icon": {
-      "16": "icon.png",
-      "48": "icon.png",
-      "128": "icon.png"
+      "16": "src/assets/source/icon/icon.png",
+      "48": "src/assets/source/icon/icon.png",
+      "128": "src/assets/source/icon/icon.png"
     }
   }
 }

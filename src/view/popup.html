@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Follcker</title>
+  <link rel="stylesheet" href="../assets/style/popup.css">
+</head>
+<body>
+  <h5>follower-tracker 1.0</h5>
+  <div class="use">
+    <div class="box-button">
+      <button id="toggle-button" class="turn"></button>
+    </div>
+    <p id="status-text">OFF</p>
+  </div>
+  <form id="credentials-form" autocomplete="off">
+    <input type="text" id="username" name="username" placeholder="GitHub Username" required>
+    <input type="text" id="token" name="token" placeholder="GitHub Token" required>
+    <div class="box-button">
+      <button type="submit">Save</button>
+    </div>
+  </form>
+  <script src="../modules/script.js"></script>
+</body>
+</html>

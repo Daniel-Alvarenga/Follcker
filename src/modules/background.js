@@ -1,6 +1,6 @@
-const followers = document.querySelectorAll('.d-table.table-fixed');
-
 async function processFollowers(username, token) {
+    const followers = document.querySelectorAll('.d-table.table-fixed');
+    console.log("Processando...")
     for (const follower of followers) {
         const userLink = follower.querySelector('a[data-hovercard-type="user"]');
 
@@ -15,7 +15,8 @@ async function processFollowers(username, token) {
             statusElement.textContent = status;
             statusElement.style.fontSize = 'small';
             statusElement.style.color = 'gray';
-            statusElement.alt = 'Follower Tracker';
+            statusElement.alt = 'Follcker';
+            statusElement.class = 'follcker-element';
 
             const receivBlock = follower.querySelector('div.d-table-cell.col-9.v-align-top.pr-3');
             if (receivBlock) {
@@ -56,25 +57,42 @@ async function consultFollowStat(userToCheck, username, token) {
     return followers.some(follower => follower.login === userToCheck);
 }
 
-chrome.storage.local.get(['githubUsername', 'githubToken'], function(data) {
-    console.log('Storage data retrieved:', data);
-    var isExtensionOn = false;
+function trackFollowers(){
+    browser.storage.local.get(['githubUsername', 'githubToken'], function(data) {
+        console.log('Storage data retrieved:', data);
+    
+        const username = data.githubUsername;
+        const token = data.githubToken;
+    
+        if (!username || !token) {
+            return;
+        } else {
+            browser.storage.local.get('isExtensionOn', function(data) {
+                removeElements();
 
-    chrome.storage.local.get('isExtensionOn', function(data) {
-        isExtensionOn = data.isExtensionOn;
+                if(data.isExtensionOn == true){
+                    processFollowers(username, token);
+                }
+            });        
+        }
     });
+}
 
-    const username = data.githubUsername;
-    const token = data.githubToken;
-
-    if (!username || !token) {
-        console.log('GitHub credentials not found.');
-        return;
-    } else {
-        console.log('Extensão ativa:', isExtensionOn);
-        console.log('GitHub Username:', username);
-        console.log('GitHub Token:', token);
-
-        processFollowers(username, token);
+browser.runtime.onMessage.addListener(function(request) {
+    removeElements();
+    
+    if (request.action === "on"){
+        trackFollowers();
     }
 });
+
+function removeElements() {
+    console.log("Limpando elementos já colocados")
+    const elements = document.querySelectorAll('.follcker-element');
+    
+    elements.forEach(element => {
+        element.remove();
+    });
+}
+
+trackFollowers();

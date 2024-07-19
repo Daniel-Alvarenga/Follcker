@@ -2,14 +2,16 @@
     padding: 0px;
     margin: 0px;
     font-family: "Inter", sans-serif;
+    color: #eee;
+    overflow-x: hidden;
 }
 
 body {
     background-color: #1b1b23;
-    width: 300px;
+    width: 250px;
 }
 
-h3 {
+body h5 {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -17,19 +19,20 @@ h3 {
     background-color: #323543;
     padding-top: 5px;
     padding-bottom: 5px;
+    box-sizing: border-box;
 }
 
-.box-button,
-.use {
+body .use, body .use .box-button {
     width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    /* border: solid 1px red; */
 }
 
-.turn {
+body .use .box-button .turn {
     width: 180px;
     height: 180px;
     background-size: cover;
@@ -43,17 +46,53 @@ h3 {
     outline: none;
 }
 
+body .use .status-text{
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
 .on {
     filter: invert(44%) sepia(91%) saturate(4743%) hue-rotate(360deg) brightness(97%) contrast(106%);
 }
 
-input {
+#credentials-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 7px;
+}
+
+#credentials-form input {
     margin-bottom: 10px;
     background-color: transparent;
-    width: 100%;
+    width: calc(100% - 50px);
     margin-top: 5px;
     outline: none;
-    color: #111111;
     border: none;
     font-size: 1rem;
+    border-bottom: 1px solid transparent;
+}
+
+#credentials-form input:focus {
+    border-bottom: 1px solid rgb(0, 127.5, 255);
+}
+
+#credentials-form .box-button {
+    width: calc(100% - 40px);
+    padding: 10px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+#credentials-form .box-button button {
+    background-color: #323543;
+    padding: 7px;
+    border-radius: 7px;
+    border: none;
+    box-sizing: border-box;   
 }

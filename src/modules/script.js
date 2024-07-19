@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const usernameInput = document.getElementById('username');
   const tokenInput = document.getElementById('token');
 
-  chrome.storage.local.get(['isExtensionOn', 'githubUsername', 'githubToken'], function(data) {
+  browser.storage.local.get(['isExtensionOn', 'githubUsername', 'githubToken'], function(data) {
     if (data.isExtensionOn) {
       toggleButton.classList.add('on');
       statusText.textContent = 'ON';
@@ -24,15 +24,19 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   toggleButton.addEventListener('click', function() {
-    chrome.storage.local.get('isExtensionOn', function(data) {
+    browser.storage.local.get('isExtensionOn', function(data) {
       const isExtensionOn = !data.isExtensionOn;
-      chrome.storage.local.set({ isExtensionOn: isExtensionOn }, function() {
+      browser.storage.local.set({ isExtensionOn: isExtensionOn }, function() {
         if (isExtensionOn) {
           toggleButton.classList.add('on');
           statusText.textContent = 'ON';
+
+          browser.runtime.sendMessage({action: "on"});
         } else {
           toggleButton.classList.remove('on');
           statusText.textContent = 'OFF';
+
+          browser.runtime.sendMessage({action: "off"});
         }
       });
     });
@@ -42,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
     event.preventDefault();
     const githubUsername = usernameInput.value;
     const githubToken = tokenInput.value;
-    chrome.storage.local.set({
+    browser.storage.local.set({
       githubUsername: githubUsername,
       githubToken: githubToken
     }, function() {
