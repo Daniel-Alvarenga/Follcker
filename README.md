@@ -11,6 +11,7 @@ It works by calling the github API with your credentials and checking whether a 
 ## How to Use
 
 - Create a GitHub token [here](https://github.com/settings/apps)
+
   The permissions would be like:
   - [x] user
     - [x] user:read 
@@ -24,4 +25,4 @@ It works by calling the github API with your credentials and checking whether a 
 
 
 >[!warning]
->You need to check as true only user:read and user:follow for secure, becase the tokem will be stored in your browser's public storage
+>You need to check as true only user:read and user:follow for secure, becase the token will be stored in your browser's public storage
