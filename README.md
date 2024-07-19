@@ -1,6 +1,6 @@
 # Follcker
 
-[![GitHub license](https://img.shields.io/github/license/daniel-alvarenga/Follcker)](vitorcarvalho67/Boot/blob/master/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/daniel-alvarenga/Follcker)](daniel-alvarenga/Follcker/blob/master/LICENSE)
 ![GitHub languages top](https://img.shields.io/github/languages/top/daniel-alvarenga/Follcker)
 [![GitHub contributors](https://img.shields.io/github/contributors/daniel-alvarenga/Follcker)](https://github.com/daniel-alvarenga/Follcker/graphs/contributors)
 ![GitHub stars](https://img.shields.io/github/stars/daniel-alvarenga/Follcker)
