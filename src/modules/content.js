@@ -6,7 +6,6 @@ async function processFollowers(username, token) {
 
     if (userLink) {
       const userToCheck = userLink.getAttribute("href").substring(1);
-      console.log("Verificando seguidor:", userToCheck);
 
       const isBackFollower = await isFollower(userToCheck, username, token);
 
@@ -19,36 +18,24 @@ async function processFollowers(username, token) {
       statusElement.alt = "Follcker";
       statusElement.className = "follcker-element";
 
-      console.log("Criando elemento de status:", statusElement);
-
       const receivBlock = follower.querySelector(
         "div.d-table-cell.col-2.v-align-top.text-right"
       );
       if (receivBlock) {
         receivBlock.appendChild(statusElement);
-        console.log("Elemento de status adicionado:", statusElement);
       }
     }
   }
 }
 
 function removeElements() {
-  console.log("Limpando elementos já colocados");
   const elements = document.querySelectorAll("span.follcker-element");
 
-  if (elements.length === 0) {
-    console.log("Nenhum elemento para limpar.");
-    return;
-  }
-
-  console.log(`Elementos encontrados: ${elements.length}`);
+  console.log(`Limpando elementos já colocados: ${elements.length}`);
 
   elements.forEach((element, index) => {
-    console.log(`Removendo elemento ${index + 1}:`, element);
     element.remove();
   });
-
-  console.log("Todos os elementos foram removidos.");
 }
 
 browser.runtime.onMessage.addListener(function (request, sender, sendResponse) {
@@ -95,8 +82,6 @@ async function consultFollowStat(userToCheck, username, token) {
 
 function trackFollowers() {
   browser.storage.local.get(["githubUsername", "githubToken"], function (data) {
-    console.log("Storage data retrieved:", data);
-
     const username = data.githubUsername;
     const token = data.githubToken;
 
@@ -121,3 +106,29 @@ browser.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     trackFollowers();
   }
 });
+
+function trackURLChange() {
+  let lastURL = window.location.href;
+
+  new MutationObserver(() => {
+    const currentURL = window.location.href;
+    if (lastURL !== currentURL) {
+      console.log('Mudança de página');
+      lastURL = currentURL;
+      
+      trackFollowers();
+    }
+  }).observe(document, { subtree: true, childList: true });
+
+  window.addEventListener("popstate", () => {
+    const currentURL = window.location.href;
+    if (lastURL !== currentURL) {
+      console.log('Mudança de página');
+      lastURL = currentURL;
+      
+      trackFollowers();
+    }
+  });
+}
+
+trackURLChange();
