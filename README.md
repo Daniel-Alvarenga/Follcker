@@ -32,7 +32,7 @@ It works by calling the github API with your credentials and checking whether a 
 
 1. [Download Follcker from Firefox Add-ons](https://addons.mozilla.org/pt-BR/firefox/addon/follcker/).
 2. Install the extension in your browser.
-3. Create a GitHub token [here](https://github.com/settings/apps) with the following permissions:
+3. Create a GitHub token [here](https://github.com/settings/apps) with this scope:
     - [x] user
       - [x] user:read 
       - [ ] user:email 
