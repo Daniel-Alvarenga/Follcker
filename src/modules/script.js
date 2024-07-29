@@ -59,13 +59,16 @@ document.addEventListener("DOMContentLoaded", function () {
       function () {
         saveButton.style.display = 'none';
         sucessMessage.style.display = 'flex';
-
-        setTimeout(() => {
-          saveButton.style.display = 'flex';
-          sucessMessage.style.display = 'none';
-            
-        }, 5000);
+        browser.runtime.sendMessage({ action: "on" });
       }
     );
   });
+
+  const handleInputChange = (event) => {
+    saveButton.style.display = 'flex';
+    sucessMessage.style.display = 'none';
+  };
+
+  usernameInput.addEventListener('input', handleInputChange);
+  tokenInput.addEventListener('input', handleInputChange);
 });
