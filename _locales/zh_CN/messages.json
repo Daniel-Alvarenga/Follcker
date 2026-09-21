@@ -1,0 +1,194 @@
+{
+  "extName": {
+    "message": "Follcker"
+  },
+  "extDescription": {
+    "message": "直接在 GitHub 的关注和粉丝页面上，查看谁回关了你。"
+  },
+  "statusOn": {
+    "message": "已启用"
+  },
+  "statusOff": {
+    "message": "已暂停"
+  },
+  "statusOnHint": {
+    "message": "标记会显示在 GitHub 的关注列表中。"
+  },
+  "statusOffHint": {
+    "message": "启用后即可标注 GitHub 的关注列表。"
+  },
+  "toggleLabel": {
+    "message": "启用或停用 Follcker"
+  },
+  "usernameLabel": {
+    "message": "GitHub 用户名"
+  },
+  "usernamePlaceholder": {
+    "message": "你的用户名"
+  },
+  "tokenLabel": {
+    "message": "个人访问令牌"
+  },
+  "tokenPlaceholder": {
+    "message": "github_pat_..."
+  },
+  "optional": {
+    "message": "可选"
+  },
+  "tokenHint": {
+    "message": "不使用令牌时每小时可请求 60 次，通常已经够用。添加只读令牌可将上限提高到每小时 5,000 次。"
+  },
+  "tokenHintLink": {
+    "message": "创建令牌"
+  },
+  "revealToken": {
+    "message": "显示令牌"
+  },
+  "hideToken": {
+    "message": "隐藏令牌"
+  },
+  "save": {
+    "message": "保存"
+  },
+  "saving": {
+    "message": "验证中…"
+  },
+  "saved": {
+    "message": "已保存"
+  },
+  "clear": {
+    "message": "清除"
+  },
+  "refresh": {
+    "message": "刷新"
+  },
+  "openRepository": {
+    "message": "打开仓库"
+  },
+  "cacheEmpty": {
+    "message": "尚无缓存数据"
+  },
+  "cacheInfo": {
+    "message": "粉丝 $1 · 关注 $2"
+  },
+  "cacheAgeNow": {
+    "message": "刚刚更新"
+  },
+  "cacheAgeMinutes": {
+    "message": "$1 分钟前更新"
+  },
+  "cacheAgeHours": {
+    "message": "$1 小时前更新"
+  },
+  "grantTitle": {
+    "message": "Follcker 需要访问 api.github.com。"
+  },
+  "grantAction": {
+    "message": "允许"
+  },
+  "errUsernameRequired": {
+    "message": "请输入你的 GitHub 用户名。"
+  },
+  "errInvalidToken": {
+    "message": "令牌无效或已过期。"
+  },
+  "errTokenMismatch": {
+    "message": "该令牌属于 @$1，而不是 @$2。"
+  },
+  "errUserNotFound": {
+    "message": "在 GitHub 上找不到用户 @$1。"
+  },
+  "errRateLimit": {
+    "message": "已达到 GitHub 的请求上限。请在 $1 分钟后重试。"
+  },
+  "errRateLimitToken": {
+    "message": "已达到 GitHub 的请求上限。添加令牌可提高上限。"
+  },
+  "errNetwork": {
+    "message": "无法连接 GitHub。请检查你的网络。"
+  },
+  "errPermission": {
+    "message": "未授予对 api.github.com 的访问权限。"
+  },
+  "errGeneric": {
+    "message": "出错了：$1"
+  },
+  "badgeFollowsYou": {
+    "message": "关注了你"
+  },
+  "badgeNotFollowingYou": {
+    "message": "没有关注你"
+  },
+  "badgeYouFollow": {
+    "message": "你已关注"
+  },
+  "badgeYouDontFollow": {
+    "message": "你未关注"
+  },
+  "summaryLoading": {
+    "message": "Follcker 正在检查此列表…"
+  },
+  "summaryFollowing": {
+    "message": "本页 $2 人中有 $1 人没有回关你。"
+  },
+  "summaryFollowers": {
+    "message": "本页 $2 人中有 $1 人你没有回关。"
+  },
+  "summaryAllMutual": {
+    "message": "本页 $1 人全部互相关注。"
+  },
+  "summarySetup": {
+    "message": "请在 Follcker 弹窗中设置你的 GitHub 用户名。"
+  },
+  "filterShowOnly": {
+    "message": "只看这些"
+  },
+  "filterShowAll": {
+    "message": "查看全部"
+  },
+  "helpTitle": {
+    "message": "使用方法"
+  },
+  "helpShow": {
+    "message": "使用方法"
+  },
+  "helpHide": {
+    "message": "关闭帮助"
+  },
+  "helpStep1": {
+    "message": "在下方保存你的 GitHub 用户名。"
+  },
+  "helpStep2": {
+    "message": "打开开关。"
+  },
+  "helpStep3": {
+    "message": "在 GitHub 上打开任意主页的 Following 或 Followers 标签页。"
+  },
+  "helpStep4": {
+    "message": "每个账号都会显示一个标记，告诉你对方是否回关了你。"
+  },
+  "helpNote": {
+    "message": "令牌是可选的：它只会提高 GitHub 每小时的请求上限。"
+  },
+  "languageLabel": {
+    "message": "语言"
+  },
+  "languageAuto": {
+    "message": "自动"
+  },
+  "usageLabel": {
+    "message": "本小时请求数"
+  },
+  "usageValue": {
+    "message": "$1 / $2"
+  },
+  "usageReset": {
+    "message": "$1 分钟后重置"
+  },
+  "usageResetSoon": {
+    "message": "不到一分钟后重置"
+  },
+  "usageUnavailable": {
+    "message": "不可用"
+  }
+}

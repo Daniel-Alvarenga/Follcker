@@ -1,0 +1,194 @@
+{
+  "extName": {
+    "message": "Follcker"
+  },
+  "extDescription": {
+    "message": "Voyez qui vous suit en retour sur GitHub, directement sur les pages following et followers."
+  },
+  "statusOn": {
+    "message": "Actif"
+  },
+  "statusOff": {
+    "message": "En pause"
+  },
+  "statusOnHint": {
+    "message": "Les étiquettes s'affichent dans les listes GitHub."
+  },
+  "statusOffHint": {
+    "message": "Activez pour annoter les listes GitHub."
+  },
+  "toggleLabel": {
+    "message": "Activer ou désactiver Follcker"
+  },
+  "usernameLabel": {
+    "message": "Nom d'utilisateur GitHub"
+  },
+  "usernamePlaceholder": {
+    "message": "votre-utilisateur"
+  },
+  "tokenLabel": {
+    "message": "Jeton d'accès personnel"
+  },
+  "tokenPlaceholder": {
+    "message": "github_pat_..."
+  },
+  "optional": {
+    "message": "facultatif"
+  },
+  "tokenHint": {
+    "message": "Sans jeton, vous avez 60 requêtes/heure, ce qui suffit en général. Un jeton en lecture seule porte la limite à 5 000/heure."
+  },
+  "tokenHintLink": {
+    "message": "Créer un jeton"
+  },
+  "revealToken": {
+    "message": "Afficher le jeton"
+  },
+  "hideToken": {
+    "message": "Masquer le jeton"
+  },
+  "save": {
+    "message": "Enregistrer"
+  },
+  "saving": {
+    "message": "Vérification..."
+  },
+  "saved": {
+    "message": "Enregistré"
+  },
+  "clear": {
+    "message": "Effacer"
+  },
+  "refresh": {
+    "message": "Actualiser"
+  },
+  "openRepository": {
+    "message": "Ouvrir le dépôt"
+  },
+  "cacheEmpty": {
+    "message": "Aucune donnée en cache"
+  },
+  "cacheInfo": {
+    "message": "$1 abonnés · $2 abonnements"
+  },
+  "cacheAgeNow": {
+    "message": "mis à jour à l'instant"
+  },
+  "cacheAgeMinutes": {
+    "message": "mis à jour il y a $1 min"
+  },
+  "cacheAgeHours": {
+    "message": "mis à jour il y a $1 h"
+  },
+  "grantTitle": {
+    "message": "Follcker a besoin d'accéder à api.github.com."
+  },
+  "grantAction": {
+    "message": "Autoriser"
+  },
+  "errUsernameRequired": {
+    "message": "Saisissez votre nom d'utilisateur GitHub."
+  },
+  "errInvalidToken": {
+    "message": "Jeton invalide ou expiré."
+  },
+  "errTokenMismatch": {
+    "message": "Ce jeton appartient à @$1, pas à @$2."
+  },
+  "errUserNotFound": {
+    "message": "Utilisateur @$1 introuvable sur GitHub."
+  },
+  "errRateLimit": {
+    "message": "Limite GitHub atteinte. Réessayez dans $1 min."
+  },
+  "errRateLimitToken": {
+    "message": "Limite GitHub atteinte. Ajoutez un jeton pour l'augmenter."
+  },
+  "errNetwork": {
+    "message": "Impossible de joindre GitHub. Vérifiez votre connexion."
+  },
+  "errPermission": {
+    "message": "L'accès à api.github.com n'a pas été accordé."
+  },
+  "errGeneric": {
+    "message": "Un problème est survenu : $1"
+  },
+  "badgeFollowsYou": {
+    "message": "vous suit"
+  },
+  "badgeNotFollowingYou": {
+    "message": "ne vous suit pas"
+  },
+  "badgeYouFollow": {
+    "message": "vous le suivez"
+  },
+  "badgeYouDontFollow": {
+    "message": "vous ne le suivez pas"
+  },
+  "summaryLoading": {
+    "message": "Follcker vérifie cette liste..."
+  },
+  "summaryFollowing": {
+    "message": "$1 sur $2 de cette page ne vous suivent pas en retour."
+  },
+  "summaryFollowers": {
+    "message": "$1 sur $2 de cette page que vous ne suivez pas en retour."
+  },
+  "summaryAllMutual": {
+    "message": "Les $1 de cette page sont réciproques."
+  },
+  "summarySetup": {
+    "message": "Indiquez votre nom d'utilisateur GitHub dans le popup Follcker."
+  },
+  "filterShowOnly": {
+    "message": "Afficher uniquement ceux-ci"
+  },
+  "filterShowAll": {
+    "message": "Tout afficher"
+  },
+  "helpTitle": {
+    "message": "Comment l'utiliser"
+  },
+  "helpShow": {
+    "message": "Comment l'utiliser"
+  },
+  "helpHide": {
+    "message": "Fermer l'aide"
+  },
+  "helpStep1": {
+    "message": "Enregistrez votre nom d'utilisateur GitHub ci-dessous."
+  },
+  "helpStep2": {
+    "message": "Activez l'interrupteur."
+  },
+  "helpStep3": {
+    "message": "Ouvrez l'onglet Following ou Followers de n'importe quel profil GitHub."
+  },
+  "helpStep4": {
+    "message": "Chaque compte reçoit une étiquette indiquant s'il vous suit en retour."
+  },
+  "helpNote": {
+    "message": "Le jeton est facultatif : il ne fait qu'augmenter la limite horaire de requêtes GitHub."
+  },
+  "languageLabel": {
+    "message": "Langue"
+  },
+  "languageAuto": {
+    "message": "Automatique"
+  },
+  "usageLabel": {
+    "message": "Requêtes cette heure"
+  },
+  "usageValue": {
+    "message": "$1 sur $2"
+  },
+  "usageReset": {
+    "message": "réinitialisation dans $1 min"
+  },
+  "usageResetSoon": {
+    "message": "réinitialisation dans moins d'une minute"
+  },
+  "usageUnavailable": {
+    "message": "indisponible"
+  }
+}

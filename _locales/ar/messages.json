@@ -1,0 +1,194 @@
+{
+  "extName": {
+    "message": "Follcker"
+  },
+  "extDescription": {
+    "message": "اعرف من يتابعك بالمقابل على GitHub، مباشرةً في صفحتَي المتابَعين والمتابِعين."
+  },
+  "statusOn": {
+    "message": "مُفعَّل"
+  },
+  "statusOff": {
+    "message": "متوقف"
+  },
+  "statusOnHint": {
+    "message": "تظهر الشارات في قوائم المتابعة على GitHub."
+  },
+  "statusOffHint": {
+    "message": "فعِّله لإضافة الشارات إلى قوائم GitHub."
+  },
+  "toggleLabel": {
+    "message": "تفعيل Follcker أو إيقافه"
+  },
+  "usernameLabel": {
+    "message": "اسم المستخدم على GitHub"
+  },
+  "usernamePlaceholder": {
+    "message": "اسم-المستخدم"
+  },
+  "tokenLabel": {
+    "message": "رمز الوصول الشخصي"
+  },
+  "tokenPlaceholder": {
+    "message": "github_pat_..."
+  },
+  "optional": {
+    "message": "اختياري"
+  },
+  "tokenHint": {
+    "message": "بدون رمز لديك 60 طلبًا في الساعة، وهو كافٍ عادةً. أضف رمزًا للقراءة فقط لرفع الحد إلى 5000 طلب في الساعة."
+  },
+  "tokenHintLink": {
+    "message": "إنشاء رمز"
+  },
+  "revealToken": {
+    "message": "إظهار الرمز"
+  },
+  "hideToken": {
+    "message": "إخفاء الرمز"
+  },
+  "save": {
+    "message": "حفظ"
+  },
+  "saving": {
+    "message": "جارٍ التحقق…"
+  },
+  "saved": {
+    "message": "تم الحفظ"
+  },
+  "clear": {
+    "message": "مسح"
+  },
+  "refresh": {
+    "message": "تحديث"
+  },
+  "openRepository": {
+    "message": "فتح المستودع"
+  },
+  "cacheEmpty": {
+    "message": "لا توجد بيانات مخزَّنة بعد"
+  },
+  "cacheInfo": {
+    "message": "$1 متابِعًا · يتابع $2"
+  },
+  "cacheAgeNow": {
+    "message": "حُدِّث للتو"
+  },
+  "cacheAgeMinutes": {
+    "message": "حُدِّث قبل $1 دقيقة"
+  },
+  "cacheAgeHours": {
+    "message": "حُدِّث قبل $1 ساعة"
+  },
+  "grantTitle": {
+    "message": "يحتاج Follcker إلى الوصول إلى api.github.com."
+  },
+  "grantAction": {
+    "message": "السماح"
+  },
+  "errUsernameRequired": {
+    "message": "أدخل اسم المستخدم الخاص بك على GitHub."
+  },
+  "errInvalidToken": {
+    "message": "الرمز غير صالح أو منتهي الصلاحية."
+  },
+  "errTokenMismatch": {
+    "message": "هذا الرمز يخص ‎@$1‎ وليس ‎@$2‎."
+  },
+  "errUserNotFound": {
+    "message": "لم يُعثر على المستخدم ‎@$1‎ على GitHub."
+  },
+  "errRateLimit": {
+    "message": "بلغت حد الطلبات في GitHub. أعد المحاولة بعد $1 دقيقة."
+  },
+  "errRateLimitToken": {
+    "message": "بلغت حد الطلبات في GitHub. أضف رمزًا لرفع الحد."
+  },
+  "errNetwork": {
+    "message": "تعذَّر الوصول إلى GitHub. تحقق من اتصالك."
+  },
+  "errPermission": {
+    "message": "لم يُمنح الوصول إلى api.github.com."
+  },
+  "errGeneric": {
+    "message": "حدث خطأ ما: $1"
+  },
+  "badgeFollowsYou": {
+    "message": "يتابعك"
+  },
+  "badgeNotFollowingYou": {
+    "message": "لا يتابعك"
+  },
+  "badgeYouFollow": {
+    "message": "تتابعه"
+  },
+  "badgeYouDontFollow": {
+    "message": "لا تتابعه"
+  },
+  "summaryLoading": {
+    "message": "يتحقق Follcker من هذه القائمة…"
+  },
+  "summaryFollowing": {
+    "message": "‏$1 من أصل $2 في هذه الصفحة لا يتابعونك بالمقابل."
+  },
+  "summaryFollowers": {
+    "message": "‏$1 من أصل $2 في هذه الصفحة لا تتابعهم بالمقابل."
+  },
+  "summaryAllMutual": {
+    "message": "المتابعة متبادلة مع الـ $1 جميعًا في هذه الصفحة."
+  },
+  "summarySetup": {
+    "message": "اضبط اسم المستخدم الخاص بك على GitHub في نافذة Follcker."
+  },
+  "filterShowOnly": {
+    "message": "عرض هؤلاء فقط"
+  },
+  "filterShowAll": {
+    "message": "عرض الكل"
+  },
+  "helpTitle": {
+    "message": "طريقة الاستخدام"
+  },
+  "helpShow": {
+    "message": "طريقة الاستخدام"
+  },
+  "helpHide": {
+    "message": "إغلاق المساعدة"
+  },
+  "helpStep1": {
+    "message": "احفظ اسم المستخدم الخاص بك على GitHub في الأسفل."
+  },
+  "helpStep2": {
+    "message": "فعِّل المفتاح."
+  },
+  "helpStep3": {
+    "message": "افتح تبويب Following أو Followers لأي ملف شخصي على GitHub."
+  },
+  "helpStep4": {
+    "message": "سيحصل كل حساب على شارة تبيّن ما إذا كان يتابعك بالمقابل."
+  },
+  "helpNote": {
+    "message": "الرمز اختياري: فهو يرفع حد الطلبات في الساعة على GitHub فقط."
+  },
+  "languageLabel": {
+    "message": "اللغة"
+  },
+  "languageAuto": {
+    "message": "تلقائي"
+  },
+  "usageLabel": {
+    "message": "طلبات هذه الساعة"
+  },
+  "usageValue": {
+    "message": "$1 من $2"
+  },
+  "usageReset": {
+    "message": "يُعاد الضبط بعد $1 دقيقة"
+  },
+  "usageResetSoon": {
+    "message": "يُعاد الضبط خلال أقل من دقيقة"
+  },
+  "usageUnavailable": {
+    "message": "غير متاح"
+  }
+}

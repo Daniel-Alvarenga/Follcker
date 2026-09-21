@@ -1,0 +1,194 @@
+{
+  "extName": {
+    "message": "Follcker"
+  },
+  "extDescription": {
+    "message": "GitHub-এর following ও followers পাতাতেই দেখুন কে আপনাকে পাল্টা ফলো করে।"
+  },
+  "statusOn": {
+    "message": "সক্রিয়"
+  },
+  "statusOff": {
+    "message": "বিরতিতে"
+  },
+  "statusOnHint": {
+    "message": "GitHub-এর তালিকায় চিহ্ন দেখানো হচ্ছে।"
+  },
+  "statusOffHint": {
+    "message": "GitHub-এর তালিকায় চিহ্ন বসাতে চালু করুন।"
+  },
+  "toggleLabel": {
+    "message": "Follcker চালু বা বন্ধ করুন"
+  },
+  "usernameLabel": {
+    "message": "GitHub ব্যবহারকারীর নাম"
+  },
+  "usernamePlaceholder": {
+    "message": "আপনার-ব্যবহারকারীর-নাম"
+  },
+  "tokenLabel": {
+    "message": "ব্যক্তিগত অ্যাক্সেস টোকেন"
+  },
+  "tokenPlaceholder": {
+    "message": "github_pat_..."
+  },
+  "optional": {
+    "message": "ঐচ্ছিক"
+  },
+  "tokenHint": {
+    "message": "টোকেন ছাড়া আপনি ঘণ্টায় ৬০টি অনুরোধ পান, যা সাধারণত যথেষ্ট। শুধু-পড়ার টোকেন যোগ করলে সীমা ঘণ্টায় ৫,০০০ হয়।"
+  },
+  "tokenHintLink": {
+    "message": "টোকেন তৈরি করুন"
+  },
+  "revealToken": {
+    "message": "টোকেন দেখান"
+  },
+  "hideToken": {
+    "message": "টোকেন লুকান"
+  },
+  "save": {
+    "message": "সংরক্ষণ"
+  },
+  "saving": {
+    "message": "যাচাই করা হচ্ছে…"
+  },
+  "saved": {
+    "message": "সংরক্ষিত"
+  },
+  "clear": {
+    "message": "মুছুন"
+  },
+  "refresh": {
+    "message": "রিফ্রেশ"
+  },
+  "openRepository": {
+    "message": "রিপোজিটরি খুলুন"
+  },
+  "cacheEmpty": {
+    "message": "এখনও কোনো তথ্য জমা নেই"
+  },
+  "cacheInfo": {
+    "message": "$1 জন ফলোয়ার · $2 জনকে ফলো করেন"
+  },
+  "cacheAgeNow": {
+    "message": "এইমাত্র হালনাগাদ"
+  },
+  "cacheAgeMinutes": {
+    "message": "$1 মিনিট আগে হালনাগাদ"
+  },
+  "cacheAgeHours": {
+    "message": "$1 ঘণ্টা আগে হালনাগাদ"
+  },
+  "grantTitle": {
+    "message": "Follcker-এর api.github.com-এ প্রবেশাধিকার দরকার।"
+  },
+  "grantAction": {
+    "message": "অনুমতি দিন"
+  },
+  "errUsernameRequired": {
+    "message": "আপনার GitHub ব্যবহারকারীর নাম লিখুন।"
+  },
+  "errInvalidToken": {
+    "message": "টোকেন অবৈধ বা মেয়াদোত্তীর্ণ।"
+  },
+  "errTokenMismatch": {
+    "message": "এই টোকেনটি @$1-এর, @$2-এর নয়।"
+  },
+  "errUserNotFound": {
+    "message": "GitHub-এ @$1 ব্যবহারকারীকে পাওয়া যায়নি।"
+  },
+  "errRateLimit": {
+    "message": "GitHub-এর অনুরোধ সীমা শেষ। $1 মিনিট পরে চেষ্টা করুন।"
+  },
+  "errRateLimitToken": {
+    "message": "GitHub-এর অনুরোধ সীমা শেষ। সীমা বাড়াতে একটি টোকেন যোগ করুন।"
+  },
+  "errNetwork": {
+    "message": "GitHub-এ পৌঁছানো যায়নি। আপনার সংযোগ দেখুন।"
+  },
+  "errPermission": {
+    "message": "api.github.com-এ প্রবেশাধিকার দেওয়া হয়নি।"
+  },
+  "errGeneric": {
+    "message": "কিছু একটা ভুল হয়েছে: $1"
+  },
+  "badgeFollowsYou": {
+    "message": "আপনাকে ফলো করে"
+  },
+  "badgeNotFollowingYou": {
+    "message": "আপনাকে ফলো করে না"
+  },
+  "badgeYouFollow": {
+    "message": "আপনি ফলো করেন"
+  },
+  "badgeYouDontFollow": {
+    "message": "আপনি ফলো করেন না"
+  },
+  "summaryLoading": {
+    "message": "Follcker এই তালিকা যাচাই করছে…"
+  },
+  "summaryFollowing": {
+    "message": "এই পাতার $2 জনের মধ্যে $1 জন আপনাকে পাল্টা ফলো করে না।"
+  },
+  "summaryFollowers": {
+    "message": "এই পাতার $2 জনের মধ্যে $1 জনকে আপনি পাল্টা ফলো করেন না।"
+  },
+  "summaryAllMutual": {
+    "message": "এই পাতার $1 জনই পারস্পরিক।"
+  },
+  "summarySetup": {
+    "message": "Follcker পপআপে আপনার GitHub ব্যবহারকারীর নাম দিন।"
+  },
+  "filterShowOnly": {
+    "message": "শুধু এগুলো দেখান"
+  },
+  "filterShowAll": {
+    "message": "সব দেখান"
+  },
+  "helpTitle": {
+    "message": "যেভাবে ব্যবহার করবেন"
+  },
+  "helpShow": {
+    "message": "যেভাবে ব্যবহার করবেন"
+  },
+  "helpHide": {
+    "message": "সহায়িকা বন্ধ করুন"
+  },
+  "helpStep1": {
+    "message": "নিচে আপনার GitHub ব্যবহারকারীর নাম সংরক্ষণ করুন।"
+  },
+  "helpStep2": {
+    "message": "সুইচটি চালু করুন।"
+  },
+  "helpStep3": {
+    "message": "GitHub-এ যেকোনো প্রোফাইলের Following বা Followers ট্যাব খুলুন।"
+  },
+  "helpStep4": {
+    "message": "প্রতিটি অ্যাকাউন্টে একটি চিহ্ন বসবে, যা বলবে সে আপনাকে পাল্টা ফলো করে কি না।"
+  },
+  "helpNote": {
+    "message": "টোকেন ঐচ্ছিক: এটি শুধু GitHub-এর ঘণ্টাপ্রতি অনুরোধ সীমা বাড়ায়।"
+  },
+  "languageLabel": {
+    "message": "ভাষা"
+  },
+  "languageAuto": {
+    "message": "স্বয়ংক্রিয়"
+  },
+  "usageLabel": {
+    "message": "এই ঘণ্টার অনুরোধ"
+  },
+  "usageValue": {
+    "message": "$2-এর মধ্যে $1"
+  },
+  "usageReset": {
+    "message": "$1 মিনিটে রিসেট"
+  },
+  "usageResetSoon": {
+    "message": "এক মিনিটের কমে রিসেট"
+  },
+  "usageUnavailable": {
+    "message": "অনুপলব্ধ"
+  }
+}

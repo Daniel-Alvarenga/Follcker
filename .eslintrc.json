@@ -1,0 +1,46 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2022": true,
+    "webextensions": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "script"
+  },
+  "extends": "eslint:recommended",
+  "globals": {
+    "ext": "writable",
+    "MSG": "writable",
+    "t": "writable",
+    "I18N": "writable",
+    "LOCALES": "writable"
+  },
+  "overrides": [
+    {
+      "files": [
+        "src/background/*.js"
+      ],
+      "env": {
+        "serviceworker": true
+      }
+    },
+    {
+      "files": [
+        "src/background/background.js"
+      ],
+      "globals": {
+        "getLists": "readonly",
+        "getRateLimit": "readonly",
+        "validateCredentials": "readonly"
+      }
+    }
+  ],
+  "rules": {
+    "comma-dangle": [
+      "error",
+      "never"
+    ]
+  }
+}

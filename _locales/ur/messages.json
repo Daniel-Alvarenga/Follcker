@@ -1,0 +1,194 @@
+{
+  "extName": {
+    "message": "Follcker"
+  },
+  "extDescription": {
+    "message": "GitHub کے following اور followers صفحات پر ہی دیکھیں کہ آپ کو کون جوابی فالو کرتا ہے۔"
+  },
+  "statusOn": {
+    "message": "فعال"
+  },
+  "statusOff": {
+    "message": "موقوف"
+  },
+  "statusOnHint": {
+    "message": "نشانات GitHub کی فہرستوں میں دکھائے جا رہے ہیں۔"
+  },
+  "statusOffHint": {
+    "message": "GitHub کی فہرستوں پر نشان لگانے کے لیے فعال کریں۔"
+  },
+  "toggleLabel": {
+    "message": "Follcker فعال یا غیر فعال کریں"
+  },
+  "usernameLabel": {
+    "message": "GitHub صارف نام"
+  },
+  "usernamePlaceholder": {
+    "message": "آپ-کا-صارف-نام"
+  },
+  "tokenLabel": {
+    "message": "ذاتی رسائی ٹوکن"
+  },
+  "tokenPlaceholder": {
+    "message": "github_pat_..."
+  },
+  "optional": {
+    "message": "اختیاری"
+  },
+  "tokenHint": {
+    "message": "ٹوکن کے بغیر آپ کو فی گھنٹہ 60 درخواستیں ملتی ہیں، جو عام طور پر کافی ہیں۔ صرف پڑھنے والا ٹوکن شامل کرنے سے یہ حد 5,000 فی گھنٹہ ہو جاتی ہے۔"
+  },
+  "tokenHintLink": {
+    "message": "ٹوکن بنائیں"
+  },
+  "revealToken": {
+    "message": "ٹوکن دکھائیں"
+  },
+  "hideToken": {
+    "message": "ٹوکن چھپائیں"
+  },
+  "save": {
+    "message": "محفوظ کریں"
+  },
+  "saving": {
+    "message": "جانچ جاری ہے…"
+  },
+  "saved": {
+    "message": "محفوظ ہو گیا"
+  },
+  "clear": {
+    "message": "صاف کریں"
+  },
+  "refresh": {
+    "message": "تازہ کریں"
+  },
+  "openRepository": {
+    "message": "ریپوزٹری کھولیں"
+  },
+  "cacheEmpty": {
+    "message": "ابھی کوئی ڈیٹا محفوظ نہیں"
+  },
+  "cacheInfo": {
+    "message": "$1 فالوورز · $2 کو فالو کرتے ہیں"
+  },
+  "cacheAgeNow": {
+    "message": "ابھی ابھی تازہ ہوا"
+  },
+  "cacheAgeMinutes": {
+    "message": "$1 منٹ پہلے تازہ ہوا"
+  },
+  "cacheAgeHours": {
+    "message": "$1 گھنٹے پہلے تازہ ہوا"
+  },
+  "grantTitle": {
+    "message": "Follcker کو api.github.com تک رسائی درکار ہے۔"
+  },
+  "grantAction": {
+    "message": "اجازت دیں"
+  },
+  "errUsernameRequired": {
+    "message": "اپنا GitHub صارف نام درج کریں۔"
+  },
+  "errInvalidToken": {
+    "message": "ٹوکن غلط ہے یا اس کی میعاد ختم ہو چکی ہے۔"
+  },
+  "errTokenMismatch": {
+    "message": "یہ ٹوکن ‎@$1‎ کا ہے، ‎@$2‎ کا نہیں۔"
+  },
+  "errUserNotFound": {
+    "message": "GitHub پر صارف ‎@$1‎ نہیں ملا۔"
+  },
+  "errRateLimit": {
+    "message": "GitHub کی درخواست حد پوری ہو گئی۔ $1 منٹ بعد دوبارہ کوشش کریں۔"
+  },
+  "errRateLimitToken": {
+    "message": "GitHub کی درخواست حد پوری ہو گئی۔ حد بڑھانے کے لیے ٹوکن شامل کریں۔"
+  },
+  "errNetwork": {
+    "message": "GitHub تک رسائی نہ ہو سکی۔ اپنا کنکشن دیکھیں۔"
+  },
+  "errPermission": {
+    "message": "api.github.com تک رسائی کی اجازت نہیں دی گئی۔"
+  },
+  "errGeneric": {
+    "message": "کچھ غلط ہو گیا: $1"
+  },
+  "badgeFollowsYou": {
+    "message": "آپ کو فالو کرتا ہے"
+  },
+  "badgeNotFollowingYou": {
+    "message": "آپ کو فالو نہیں کرتا"
+  },
+  "badgeYouFollow": {
+    "message": "آپ فالو کرتے ہیں"
+  },
+  "badgeYouDontFollow": {
+    "message": "آپ فالو نہیں کرتے"
+  },
+  "summaryLoading": {
+    "message": "Follcker اس فہرست کی جانچ کر رہا ہے…"
+  },
+  "summaryFollowing": {
+    "message": "اس صفحے کے $2 میں سے $1 آپ کو جوابی فالو نہیں کرتے۔"
+  },
+  "summaryFollowers": {
+    "message": "اس صفحے کے $2 میں سے $1 کو آپ جوابی فالو نہیں کرتے۔"
+  },
+  "summaryAllMutual": {
+    "message": "اس صفحے کے تمام $1 باہمی ہیں۔"
+  },
+  "summarySetup": {
+    "message": "Follcker پاپ اپ میں اپنا GitHub صارف نام مقرر کریں۔"
+  },
+  "filterShowOnly": {
+    "message": "صرف یہ دکھائیں"
+  },
+  "filterShowAll": {
+    "message": "سب دکھائیں"
+  },
+  "helpTitle": {
+    "message": "استعمال کا طریقہ"
+  },
+  "helpShow": {
+    "message": "استعمال کا طریقہ"
+  },
+  "helpHide": {
+    "message": "مدد بند کریں"
+  },
+  "helpStep1": {
+    "message": "نیچے اپنا GitHub صارف نام محفوظ کریں۔"
+  },
+  "helpStep2": {
+    "message": "سوئچ آن کریں۔"
+  },
+  "helpStep3": {
+    "message": "GitHub پر کسی بھی پروفائل کا Following یا Followers ٹیب کھولیں۔"
+  },
+  "helpStep4": {
+    "message": "ہر اکاؤنٹ پر ایک نشان آئے گا کہ وہ آپ کو جوابی فالو کرتا ہے یا نہیں۔"
+  },
+  "helpNote": {
+    "message": "ٹوکن اختیاری ہے: یہ صرف GitHub کی فی گھنٹہ درخواست حد بڑھاتا ہے۔"
+  },
+  "languageLabel": {
+    "message": "زبان"
+  },
+  "languageAuto": {
+    "message": "خودکار"
+  },
+  "usageLabel": {
+    "message": "اس گھنٹے کی درخواستیں"
+  },
+  "usageValue": {
+    "message": "$2 میں سے $1"
+  },
+  "usageReset": {
+    "message": "$1 منٹ میں ری سیٹ"
+  },
+  "usageResetSoon": {
+    "message": "ایک منٹ سے کم میں ری سیٹ"
+  },
+  "usageUnavailable": {
+    "message": "دستیاب نہیں"
+  }
+}

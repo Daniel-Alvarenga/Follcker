@@ -1,27 +1,57 @@
 {
+  "manifest_version": 3,
+  "name": "__MSG_extName__",
+  "description": "__MSG_extDescription__",
+  "version": "2.1.0",
+  "default_locale": "en",
   "author": "Daniel R. Alvarenga",
-  "manifest_version": 2,
-  "name": "Follcker",
-  "version": "1.0",
-  "permissions": ["activeTab", "storage", "https://api.github.com/*"],
-  "background": {
-    "scripts": ["src/modules/background.js"],
-    "persistent": false
+  "homepage_url": "https://github.com/Daniel-Alvarenga/Follcker",
+
+  "icons": {
+    "16": "src/assets/source/icon/icon16.png",
+    "32": "src/assets/source/icon/icon32.png",
+    "48": "src/assets/source/icon/icon48.png",
+    "64": "src/assets/source/icon/icon64.png",
+    "128": "src/assets/source/icon/icon128.png"
   },
+
+  "permissions": ["storage"],
+  "host_permissions": ["https://api.github.com/*"],
+
+  "background": {
+    "service_worker": "src/background/service-worker.js",
+    "scripts": [
+      "src/shared/browser.js",
+      "src/shared/i18n.js",
+      "src/background/api.js",
+      "src/background/background.js"
+    ]
+  },
+
   "content_scripts": [
     {
-      "matches": ["https://github.com/*?*tab=following*"],
-      "js": ["src/modules/content.js"]
+      "matches": ["https://github.com/*"],
+      "js": ["src/shared/browser.js", "src/content/content.js"],
+      "css": ["src/content/content.css"],
+      "run_at": "document_idle"
     }
   ],
-  "browser_action": {
-    "default_popup": "src/view/popup.html",
+
+  "action": {
+    "default_title": "Follcker",
+    "default_popup": "src/popup/popup.html",
     "default_icon": {
       "16": "src/assets/source/icon/icon16.png",
       "32": "src/assets/source/icon/icon32.png",
       "48": "src/assets/source/icon/icon48.png",
       "64": "src/assets/source/icon/icon64.png",
       "128": "src/assets/source/icon/icon128.png"
+    }
+  },
+
+  "browser_specific_settings": {
+    "gecko": {
+      "strict_min_version": "115.0"
     }
   }
 }
