@@ -239,7 +239,10 @@ async function send(message) {
 
 async function load() {
   const state = await send({ type: MSG.GET_STATE });
-  if (!state.ok) return showBanner(state.error);
+  if (!state.ok) {
+    showBanner(state.error);
+    return;
+  }
 
   renderStatus(state.enabled);
   el.username.value = state.username || "";
@@ -287,7 +290,10 @@ el.locale.addEventListener("change", async () => {
   const preference = el.locale.value;
 
   const response = await send({ type: MSG.SET_LOCALE, locale: preference });
-  if (!response.ok) return showBanner(response.error);
+  if (!response.ok) {
+    showBanner(response.error);
+    return;
+  }
 
   // The background keeps its own copy; this is the popup's.
   await I18N.use(preference);
@@ -343,7 +349,8 @@ el.form.addEventListener("submit", async (event) => {
   if (!username) {
     el.username.setAttribute("aria-invalid", "true");
     el.username.focus();
-    return showBanner(t("errUsernameRequired"));
+    showBanner(t("errUsernameRequired"));
+    return;
   }
 
   if (!(await checkHostPermission())) return;
@@ -359,7 +366,8 @@ el.form.addEventListener("submit", async (event) => {
     setSaveState("idle");
     el.username.setAttribute("aria-invalid", "true");
     await loadUsage();
-    return showBanner(response.error);
+    showBanner(response.error);
+    return;
   }
 
   el.username.value = response.username;
@@ -380,7 +388,10 @@ el.form.addEventListener("submit", async (event) => {
 
 el.clear.addEventListener("click", async () => {
   const response = await send({ type: MSG.CLEAR_CREDENTIALS });
-  if (!response.ok) return showBanner(response.error);
+  if (!response.ok) {
+    showBanner(response.error);
+    return;
+  }
 
   el.username.value = "";
   el.token.value = "";
@@ -399,7 +410,10 @@ el.refresh.addEventListener("click", async () => {
   el.refresh.disabled = false;
 
   await loadUsage();
-  if (!response.ok) return showBanner(response.error);
+  if (!response.ok) {
+    showBanner(response.error);
+    return;
+  }
   renderCache(response);
 });
 

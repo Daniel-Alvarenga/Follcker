@@ -132,6 +132,16 @@ src/content/            badge injection on github.com
 src/popup/              extension popup
 ```
 
+### Linting
+
+Codacy runs ESLint over this repository. `.eslintrc.json` describes the shared
+global scope the extension's classic scripts rely on, so cross-file names like
+`ext`, `t`, `MSG`, `I18N` and `LOCALES` are not reported as undefined.
+
+```
+npx eslint .
+```
+
 > [!NOTE]
 > The manifest declares both `background.service_worker` (Chrome) and
 > `background.scripts` (Firefox), so a single manifest loads in both. Chrome

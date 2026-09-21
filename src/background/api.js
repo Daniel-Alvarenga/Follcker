@@ -1,3 +1,5 @@
+/* exported getLists, getRateLimit, validateCredentials */
+
 /**
  * GitHub API layer: paginated fetching, error mapping and caching.
  *

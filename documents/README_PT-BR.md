@@ -133,6 +133,17 @@ src/content/            injeção das marcações no github.com
 src/popup/              popup da extensão
 ```
 
+### Lint
+
+O Codacy roda ESLint neste repositório. O `.eslintrc.json` descreve o escopo
+global compartilhado de que os scripts clássicos da extensão dependem, para que
+nomes usados entre arquivos - `ext`, `t`, `MSG`, `I18N`, `LOCALES` - não sejam
+reportados como indefinidos.
+
+```
+npx eslint .
+```
+
 > [!NOTE]
 > O manifest declara `background.service_worker` (Chrome) e `background.scripts`
 > (Firefox) ao mesmo tempo, então um único manifest carrega nos dois. O Chrome

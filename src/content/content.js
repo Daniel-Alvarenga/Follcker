@@ -151,6 +151,16 @@ function renderSummary(rows, tone, text, filterTarget) {
   container.insertBefore(summary, rows[0]);
 }
 
+/**
+ * Which wording a badge gets: the question differs per tab. On a "following"
+ * list the useful one is "do they follow me?"; on a "followers" list it is
+ * "do I follow them back?".
+ */
+const BADGE_LABELS = {
+  following: { yes: "badgeFollowsYou", no: "badgeNotFollowingYou" },
+  followers: { yes: "badgeYouFollow", no: "badgeYouDontFollow" },
+};
+
 function annotate(rows, context, lists) {
   const followers = new Set(lists.followers);
   const following = new Set(lists.following);
@@ -166,19 +176,9 @@ function annotate(rows, context, lists) {
     counted++;
     row.classList.add(ROW_CLASS);
 
-    // On a "following" list the useful question is "do they follow me?";
-    // on a "followers" list it is "do I follow them back?".
     const isPositive =
       context.tab === "following" ? followers.has(login) : following.has(login);
-
-    const label =
-      context.tab === "following"
-        ? isPositive
-          ? tr("badgeFollowsYou")
-          : tr("badgeNotFollowingYou")
-        : isPositive
-        ? tr("badgeYouFollow")
-        : tr("badgeYouDontFollow");
+    const label = tr(BADGE_LABELS[context.tab][isPositive ? "yes" : "no"]);
 
     if (!isPositive) {
       flagged++;
