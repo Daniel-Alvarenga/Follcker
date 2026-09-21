@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="color-scheme" content="dark light" />
+    <title>Follcker</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="head-area">
+      <header class="header">
+      <img class="header__mark" src="../assets/source/icon/icon32.png" alt="" />
+      <div class="header__title">
+        <strong>Follcker</strong>
+        <span class="header__version" id="version"></span>
+      </div>
+      <button
+        type="button"
+        class="icon-button"
+        id="help-toggle"
+        aria-expanded="false"
+        aria-controls="help"
+        data-i18n-aria-label="helpShow"
+      >
+        <svg viewBox="0 0 16 16" aria-hidden="true">
+          <circle cx="8" cy="8" r="6.4" />
+          <path d="M6.2 6.2a1.9 1.9 0 0 1 3.6.6c0 1.3-1.8 1.5-1.8 2.7" />
+          <path d="M8 12v.1" />
+        </svg>
+      </button>
+      <a
+        class="icon-button"
+        id="repo-link"
+        href="https://github.com/Daniel-Alvarenga/Follcker"
+        target="_blank"
+        rel="noreferrer noopener"
+        data-i18n-title="openRepository"
+      >
+        <svg viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M6.5 3.5h-3v9h9v-3" />
+          <path d="M9.5 2.5h4v4" />
+          <path d="M13.5 2.5 7 9" />
+        </svg>
+      </a>
+      </header>
+
+      <section class="card help" id="help" hidden>
+      <p class="help__title" data-i18n="helpTitle"></p>
+      <ol class="help__steps">
+        <li data-i18n="helpStep1"></li>
+        <li data-i18n="helpStep2"></li>
+        <li data-i18n="helpStep3"></li>
+        <li data-i18n="helpStep4"></li>
+      </ol>
+        <p class="help__note" data-i18n="helpNote"></p>
+        <p class="help__note help__note--tight" data-i18n="tokenHint"></p>
+      </section>
+    </div>
+
+    <div class="banner" id="banner" hidden>
+      <svg class="banner__icon" viewBox="0 0 16 16" aria-hidden="true">
+        <path d="M8 2.2 15 13.8H1z" />
+        <path d="M8 6.4v3.4" />
+        <path d="M8 11.7v.3" />
+      </svg>
+      <span class="banner__text" id="banner-text"></span>
+      <button type="button" class="button button--tiny" id="banner-action" hidden></button>
+    </div>
+
+    <section class="card card--status">
+      <span class="status-dot" id="status-dot" aria-hidden="true"></span>
+      <div class="status-text">
+        <p class="status-text__title" id="status-title"></p>
+        <p class="status-text__hint" id="status-hint"></p>
+      </div>
+      <button
+        type="button"
+        class="switch"
+        id="toggle"
+        role="switch"
+        aria-checked="false"
+        data-i18n-aria-label="toggleLabel"
+      >
+        <span class="switch__knob"></span>
+      </button>
+    </section>
+
+    <form class="card card--form" id="form" autocomplete="off" novalidate>
+      <label class="field">
+        <span class="field__label" data-i18n="usernameLabel"></span>
+        <span class="field__input">
+          <svg class="field__icon" viewBox="0 0 16 16" aria-hidden="true">
+            <circle cx="8" cy="5.2" r="2.8" />
+            <path d="M2.6 13.6a5.4 5.4 0 0 1 10.8 0" />
+          </svg>
+          <input
+            type="text"
+            id="username"
+            spellcheck="false"
+            autocapitalize="none"
+            autocorrect="off"
+            dir="ltr"
+            data-i18n-placeholder="usernamePlaceholder"
+          />
+        </span>
+      </label>
+
+      <label class="field">
+        <span class="field__label">
+          <span data-i18n="tokenLabel"></span>
+          <span class="chip" data-i18n="optional"></span>
+        </span>
+        <span class="field__input">
+          <svg class="field__icon" viewBox="0 0 16 16" aria-hidden="true">
+            <circle cx="5.4" cy="10.6" r="2.7" />
+            <path d="M7.4 8.7 13.2 2.9" />
+            <path d="M10.6 5.5 12.2 7.1" />
+          </svg>
+          <input
+            type="password"
+            id="token"
+            spellcheck="false"
+            autocapitalize="none"
+            autocorrect="off"
+            dir="ltr"
+            data-i18n-placeholder="tokenPlaceholder"
+          />
+          <button
+            type="button"
+            class="icon-button icon-button--inline"
+            id="reveal"
+            aria-pressed="false"
+            data-i18n-aria-label="revealToken"
+          >
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M1.4 8S4 3.6 8 3.6 14.6 8 14.6 8 12 12.4 8 12.4 1.4 8 1.4 8Z" />
+              <circle cx="8" cy="8" r="2" />
+              <path class="icon-slash" d="M2.8 2.8 13.2 13.2" hidden />
+            </svg>
+          </button>
+        </span>
+      </label>
+
+      <p class="hint">
+        <a
+          href="https://github.com/settings/personal-access-tokens/new"
+          target="_blank"
+          rel="noreferrer noopener"
+          data-i18n="tokenHintLink"
+        ></a>
+      </p>
+
+      <div class="actions">
+        <button type="button" class="button button--ghost" id="clear" data-i18n="clear"></button>
+        <button type="submit" class="button button--primary" id="save">
+          <span class="button__label" id="save-label" data-i18n="save"></span>
+        </button>
+      </div>
+    </form>
+
+    <div class="language">
+      <label class="language__label" for="locale">
+        <svg viewBox="0 0 16 16" aria-hidden="true">
+          <circle cx="8" cy="8" r="6.4" />
+          <path d="M1.7 8h12.6" />
+          <path d="M8 1.6a10 10 0 0 1 0 12.8a10 10 0 0 1 0-12.8" />
+        </svg>
+        <span data-i18n="languageLabel"></span>
+      </label>
+      <select class="select" id="locale"></select>
+    </div>
+
+    <footer class="footer">
+      <span class="footer__cache" id="cache-info"></span>
+      <div class="footer__actions">
+        <button type="button" class="button button--ghost button--tiny" id="refresh">
+        <svg viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M13.4 8a5.4 5.4 0 1 1-1.8-4" />
+          <path d="M13.6 2.2v3.6H10" />
+        </svg>
+        <span data-i18n="refresh"></span>
+        </button>
+        <div class="usage" id="usage" hidden>
+        <button
+          type="button"
+          class="usage__button"
+          id="usage-button"
+          aria-describedby="usage-tip"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle class="usage__track" cx="12" cy="12" r="9" />
+            <circle class="usage__arc" id="usage-arc" cx="12" cy="12" r="9" />
+          </svg>
+        </button>
+        <div class="usage__tip" id="usage-tip" role="tooltip">
+          <span class="usage__tip-label" data-i18n="usageLabel"></span>
+          <strong class="usage__tip-percent" id="usage-percent"></strong>
+          <span class="usage__tip-value" id="usage-value"></span>
+          <span class="usage__tip-reset" id="usage-reset"></span>
+        </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../shared/browser.js"></script>
+    <script src="../shared/i18n.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

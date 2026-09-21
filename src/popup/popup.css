@@ -1,0 +1,668 @@
+/*
+ * Follcker popup.
+ *
+ * Dark by default (the original brand palette), with a light variant driven by
+ * prefers-color-scheme. Every color is a token so the two themes stay in sync.
+ */
+
+:root {
+  --bg: #16161d;
+  --surface: #1e1f29;
+  --surface-hover: #272936;
+  --border: #2f3140;
+  --fg: #e8e9ef;
+  --fg-muted: #9a9cb0;
+  --accent: #48a7ff;
+  --accent-fg: #0b1c2e;
+  --success: #3fb950;
+  --warning: #d29922;
+  --danger: #f85149;
+  --radius: 10px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #ffffff;
+    --surface: #f6f8fa;
+    --surface-hover: #eef1f4;
+    --border: #d8dee4;
+    --fg: #1f2328;
+    --fg-muted: #636c76;
+    --accent: #0969da;
+    --accent-fg: #ffffff;
+    --success: #1a7f37;
+    --warning: #9a6700;
+    --danger: #cf222e;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/*
+ * Author `display` rules below outrank the user-agent `[hidden]` rule, so the
+ * attribute has to be enforced explicitly or hidden nodes still paint.
+ */
+[hidden] {
+  display: none !important;
+}
+
+html {
+  /* No `scrollbar-gutter` here on purpose: the help panel overlays instead of
+     growing the document, so nothing can introduce a scrollbar and shift the
+     width. A reserved gutter would also sit on the left in RTL, eating the
+     left padding in Arabic and Urdu. */
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+
+  /* A non-`none` background-image stops body's background from propagating to
+     the canvas -- which is what lets body's rounded corners actually clip. */
+  background-image: linear-gradient(transparent, transparent);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body {
+  width: 320px;
+  margin: 0;
+  padding: 12px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, system-ui,
+    sans-serif;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Header */
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 2px;
+}
+
+.header__mark {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+}
+
+.header__title {
+  flex: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+}
+
+.header__version {
+  color: var(--fg-muted);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Cards */
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.card--status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+}
+
+.card--form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px;
+}
+
+/* Status + switch */
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--fg-muted);
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.status-dot[data-on="true"] {
+  background: var(--success);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--success) 22%, transparent);
+}
+
+.status-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.status-text__title {
+  margin: 0;
+  font-weight: 600;
+}
+
+.status-text__hint {
+  margin: 1px 0 0;
+  color: var(--fg-muted);
+  font-size: 11.5px;
+}
+
+.switch {
+  flex: none;
+  position: relative;
+  width: 38px;
+  height: 22px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg);
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.switch__knob {
+  position: absolute;
+  top: 2px;
+  inset-inline-start: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--fg-muted);
+  transition: transform 0.16s ease, background 0.16s ease;
+}
+
+.switch[aria-checked="true"] {
+  background: var(--success);
+  border-color: var(--success);
+}
+
+.switch[aria-checked="true"] .switch__knob {
+  transform: translateX(16px);
+  background: #fff;
+}
+
+[dir="rtl"] .switch[aria-checked="true"] .switch__knob {
+  transform: translateX(-16px);
+}
+
+/* Fields */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.field__label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--fg-muted);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.chip {
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: var(--surface-hover);
+  color: var(--fg-muted);
+  font-size: 9.5px;
+  letter-spacing: 0.02em;
+}
+
+.field__input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px;
+  height: 34px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.field__input:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+.field__input:has(input[aria-invalid="true"]) {
+  border-color: var(--danger);
+}
+
+.field__icon {
+  flex: none;
+  color: var(--fg-muted);
+}
+
+.field__input input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: none;
+  color: var(--fg);
+  font: inherit;
+  outline: none;
+}
+
+.field__input input::placeholder {
+  color: var(--fg-muted);
+  opacity: 0.7;
+}
+
+.hint {
+  margin: -2px 0 0;
+  color: var(--fg-muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.hint a {
+  color: var(--accent);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.hint a:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 78px;
+  padding: 7px 14px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease, opacity 0.15s ease;
+}
+
+.button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.button--primary {
+  background: var(--accent);
+  color: var(--accent-fg);
+}
+
+.button--primary:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+
+.button--primary[data-state="saved"] {
+  background: var(--success);
+  color: #fff;
+}
+
+.button--ghost {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--fg-muted);
+}
+
+.button--ghost:hover:not(:disabled) {
+  background: var(--surface-hover);
+  color: var(--fg);
+}
+
+.button--tiny {
+  min-width: 0;
+  padding: 4px 10px;
+  font-size: 11px;
+}
+
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--fg-muted);
+  cursor: pointer;
+}
+
+.icon-button:hover {
+  background: var(--surface-hover);
+  color: var(--fg);
+}
+
+.icon-button--inline {
+  flex: none;
+  margin-inline-end: -4px;
+}
+
+.icon-button--active {
+  background: var(--surface-hover);
+  color: var(--accent);
+}
+
+/* Help panel -- overlays the content instead of growing the popup, because
+   Chrome resizes the popup window up but never back down. */
+
+.head-area {
+  position: relative;
+}
+
+.help {
+  position: absolute;
+  top: calc(100% + 10px);
+  inset-inline: 0;
+  z-index: 30;
+  padding: 12px 14px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
+  font-size: 12px;
+}
+
+.help__title {
+  margin: 0 0 8px;
+  font-weight: 600;
+}
+
+.help__steps {
+  margin: 0;
+  padding-inline-start: 18px;
+  color: var(--fg-muted);
+  line-height: 1.6;
+}
+
+.help__steps li::marker {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.help__note {
+  margin: 10px 0 0;
+  padding-top: 9px;
+  border-top: 1px solid var(--border);
+  color: var(--fg-muted);
+  line-height: 1.5;
+}
+
+.help__note--tight {
+  margin-top: 6px;
+  padding-top: 0;
+  border-top: none;
+}
+
+/* Usage ring */
+
+.usage {
+  --meter: var(--accent);
+  position: relative;
+  flex: none;
+  display: flex;
+}
+
+.usage[data-severity="warning"] {
+  --meter: var(--warning);
+}
+
+.usage[data-severity="critical"] {
+  --meter: var(--danger);
+}
+
+.usage__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  cursor: help;
+}
+
+.usage__button svg {
+  width: 25px;
+  height: 25px;
+  /* Start the arc at twelve o'clock instead of three. */
+  transform: rotate(-90deg);
+}
+
+.usage__track,
+.usage__arc {
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+/* Track is a translucent step of the arc's own hue, so the state reads across
+   the whole ring rather than only in the filled part. */
+.usage__track {
+  stroke: color-mix(in srgb, var(--meter) 22%, transparent);
+}
+
+.usage__arc {
+  stroke: var(--meter);
+  transition: stroke-dashoffset 0.35s ease, stroke 0.2s ease;
+}
+
+.usage__tip {
+  position: absolute;
+  /* The ring sits in the footer, so the tooltip opens upward. */
+  bottom: calc(100% + 8px);
+  inset-inline-end: 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  width: max-content;
+  max-width: 210px;
+  padding: 9px 11px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.12s ease, visibility 0.12s;
+  pointer-events: none;
+}
+
+.usage__button:hover + .usage__tip,
+.usage__button:focus-visible + .usage__tip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.usage__tip-label {
+  color: var(--fg-muted);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.usage__tip-percent {
+  margin-top: 2px;
+  color: var(--meter);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.usage__tip-value {
+  font-size: 12px;
+}
+
+.usage__tip-reset {
+  color: var(--fg-muted);
+  font-size: 11px;
+}
+
+/* Language */
+
+.language {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 0 2px;
+}
+
+.language__label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--fg-muted);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.language__label svg {
+  width: 13px;
+  height: 13px;
+}
+
+.select {
+  flex: 1;
+  min-width: 0;
+  max-width: 190px;
+  height: 30px;
+  padding: 0 8px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--fg);
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.select:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+/* Banner */
+
+.banner {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 12px;
+  border: 1px solid color-mix(in srgb, var(--danger) 45%, transparent);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--danger) 12%, transparent);
+  color: var(--danger);
+  font-size: 11.5px;
+}
+
+.banner[data-tone="info"] {
+  border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--accent);
+}
+
+.banner__icon {
+  flex: none;
+}
+
+.banner__text {
+  flex: 1;
+}
+
+.banner .button--tiny {
+  border-color: currentColor;
+  color: inherit;
+  background: transparent;
+}
+
+/* Footer */
+
+.footer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 0 2px;
+  color: var(--fg-muted);
+  font-size: 11px;
+}
+
+.footer__actions {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer__cache {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+}
+
+.footer .button svg {
+  width: 13px;
+  height: 13px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "extName": {
+    "message": "Follcker"
+  },
+  "extDescription": {
+    "message": "Смотрите, кто подписан на вас в ответ, прямо на страницах following и followers в GitHub."
+  },
+  "statusOn": {
+    "message": "Включено"
+  },
+  "statusOff": {
+    "message": "Приостановлено"
+  },
+  "statusOnHint": {
+    "message": "Метки показываются в списках подписок GitHub."
+  },
+  "statusOffHint": {
+    "message": "Включите, чтобы размечать списки GitHub."
+  },
+  "toggleLabel": {
+    "message": "Включить или выключить Follcker"
+  },
+  "usernameLabel": {
+    "message": "Имя пользователя GitHub"
+  },
+  "usernamePlaceholder": {
+    "message": "ваше-имя"
+  },
+  "tokenLabel": {
+    "message": "Персональный токен доступа"
+  },
+  "tokenPlaceholder": {
+    "message": "github_pat_..."
+  },
+  "optional": {
+    "message": "необязательно"
+  },
+  "tokenHint": {
+    "message": "Без токена доступно 60 запросов в час, чего обычно хватает. Токен только для чтения поднимает лимит до 5000 в час."
+  },
+  "tokenHintLink": {
+    "message": "Создать токен"
+  },
+  "revealToken": {
+    "message": "Показать токен"
+  },
+  "hideToken": {
+    "message": "Скрыть токен"
+  },
+  "save": {
+    "message": "Сохранить"
+  },
+  "saving": {
+    "message": "Проверяем…"
+  },
+  "saved": {
+    "message": "Сохранено"
+  },
+  "clear": {
+    "message": "Очистить"
+  },
+  "refresh": {
+    "message": "Обновить"
+  },
+  "openRepository": {
+    "message": "Открыть репозиторий"
+  },
+  "cacheEmpty": {
+    "message": "Данных в кэше пока нет"
+  },
+  "cacheInfo": {
+    "message": "подписчиков: $1 · подписок: $2"
+  },
+  "cacheAgeNow": {
+    "message": "обновлено только что"
+  },
+  "cacheAgeMinutes": {
+    "message": "обновлено $1 мин назад"
+  },
+  "cacheAgeHours": {
+    "message": "обновлено $1 ч назад"
+  },
+  "grantTitle": {
+    "message": "Follcker нужен доступ к api.github.com."
+  },
+  "grantAction": {
+    "message": "Разрешить"
+  },
+  "errUsernameRequired": {
+    "message": "Введите своё имя пользователя GitHub."
+  },
+  "errInvalidToken": {
+    "message": "Токен недействителен или истёк."
+  },
+  "errTokenMismatch": {
+    "message": "Этот токен принадлежит @$1, а не @$2."
+  },
+  "errUserNotFound": {
+    "message": "Пользователь @$1 не найден на GitHub."
+  },
+  "errRateLimit": {
+    "message": "Достигнут лимит запросов GitHub. Повторите через $1 мин."
+  },
+  "errRateLimitToken": {
+    "message": "Достигнут лимит запросов GitHub. Добавьте токен, чтобы поднять его."
+  },
+  "errNetwork": {
+    "message": "Не удалось связаться с GitHub. Проверьте соединение."
+  },
+  "errPermission": {
+    "message": "Доступ к api.github.com не предоставлен."
+  },
+  "errGeneric": {
+    "message": "Что-то пошло не так: $1"
+  },
+  "badgeFollowsYou": {
+    "message": "подписан на вас"
+  },
+  "badgeNotFollowingYou": {
+    "message": "не подписан на вас"
+  },
+  "badgeYouFollow": {
+    "message": "вы подписаны"
+  },
+  "badgeYouDontFollow": {
+    "message": "вы не подписаны"
+  },
+  "summaryLoading": {
+    "message": "Follcker проверяет этот список…"
+  },
+  "summaryFollowing": {
+    "message": "$1 из $2 на этой странице не подписаны на вас в ответ."
+  },
+  "summaryFollowers": {
+    "message": "На $1 из $2 на этой странице вы не подписаны в ответ."
+  },
+  "summaryAllMutual": {
+    "message": "Все $1 на этой странице — взаимные."
+  },
+  "summarySetup": {
+    "message": "Укажите своё имя пользователя GitHub во всплывающем окне Follcker."
+  },
+  "filterShowOnly": {
+    "message": "Показать только их"
+  },
+  "filterShowAll": {
+    "message": "Показать всех"
+  },
+  "helpTitle": {
+    "message": "Как пользоваться"
+  },
+  "helpShow": {
+    "message": "Как пользоваться"
+  },
+  "helpHide": {
+    "message": "Закрыть справку"
+  },
+  "helpStep1": {
+    "message": "Сохраните ниже своё имя пользователя GitHub."
+  },
+  "helpStep2": {
+    "message": "Включите переключатель."
+  },
+  "helpStep3": {
+    "message": "Откройте вкладку Following или Followers любого профиля на GitHub."
+  },
+  "helpStep4": {
+    "message": "У каждого аккаунта появится метка: подписан он на вас в ответ или нет."
+  },
+  "helpNote": {
+    "message": "Токен необязателен: он лишь поднимает часовой лимит запросов GitHub."
+  },
+  "languageLabel": {
+    "message": "Язык"
+  },
+  "languageAuto": {
+    "message": "Автоматически"
+  },
+  "usageLabel": {
+    "message": "Запросов за этот час"
+  },
+  "usageValue": {
+    "message": "$1 из $2"
+  },
+  "usageReset": {
+    "message": "сброс через $1 мин"
+  },
+  "usageResetSoon": {
+    "message": "сброс менее чем через минуту"
+  },
+  "usageUnavailable": {
+    "message": "недоступно"
+  }
+}

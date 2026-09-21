@@ -1,0 +1,194 @@
+{
+  "extName": {
+    "message": "Follcker"
+  },
+  "extDescription": {
+    "message": "See who follows you back on GitHub, right on the following and followers pages."
+  },
+  "statusOn": {
+    "message": "Active"
+  },
+  "statusOff": {
+    "message": "Paused"
+  },
+  "statusOnHint": {
+    "message": "Badges are shown on GitHub follow lists."
+  },
+  "statusOffHint": {
+    "message": "Turn on to annotate GitHub follow lists."
+  },
+  "toggleLabel": {
+    "message": "Toggle Follcker"
+  },
+  "usernameLabel": {
+    "message": "GitHub username"
+  },
+  "usernamePlaceholder": {
+    "message": "your-username"
+  },
+  "tokenLabel": {
+    "message": "Personal access token"
+  },
+  "tokenPlaceholder": {
+    "message": "github_pat_..."
+  },
+  "optional": {
+    "message": "optional"
+  },
+  "tokenHint": {
+    "message": "Without a token you get 60 requests/hour, which is usually enough. Add a read-only token to raise the limit to 5,000/hour."
+  },
+  "tokenHintLink": {
+    "message": "Create a token"
+  },
+  "revealToken": {
+    "message": "Show token"
+  },
+  "hideToken": {
+    "message": "Hide token"
+  },
+  "save": {
+    "message": "Save"
+  },
+  "saving": {
+    "message": "Checking..."
+  },
+  "saved": {
+    "message": "Saved"
+  },
+  "clear": {
+    "message": "Clear"
+  },
+  "refresh": {
+    "message": "Refresh"
+  },
+  "openRepository": {
+    "message": "Open repository"
+  },
+  "cacheEmpty": {
+    "message": "No data cached yet"
+  },
+  "cacheInfo": {
+    "message": "$1 followers · $2 following"
+  },
+  "cacheAgeNow": {
+    "message": "updated just now"
+  },
+  "cacheAgeMinutes": {
+    "message": "updated $1 min ago"
+  },
+  "cacheAgeHours": {
+    "message": "updated $1 h ago"
+  },
+  "grantTitle": {
+    "message": "Follcker needs access to api.github.com."
+  },
+  "grantAction": {
+    "message": "Grant"
+  },
+  "errUsernameRequired": {
+    "message": "Enter your GitHub username."
+  },
+  "errInvalidToken": {
+    "message": "Invalid or expired token."
+  },
+  "errTokenMismatch": {
+    "message": "This token belongs to @$1, not @$2."
+  },
+  "errUserNotFound": {
+    "message": "User @$1 not found on GitHub."
+  },
+  "errRateLimit": {
+    "message": "GitHub rate limit reached. Try again in $1 min."
+  },
+  "errRateLimitToken": {
+    "message": "GitHub rate limit reached. Add a token to raise it."
+  },
+  "errNetwork": {
+    "message": "Could not reach GitHub. Check your connection."
+  },
+  "errPermission": {
+    "message": "Access to api.github.com was not granted."
+  },
+  "errGeneric": {
+    "message": "Something went wrong: $1"
+  },
+  "badgeFollowsYou": {
+    "message": "follows you"
+  },
+  "badgeNotFollowingYou": {
+    "message": "doesn't follow you"
+  },
+  "badgeYouFollow": {
+    "message": "you follow"
+  },
+  "badgeYouDontFollow": {
+    "message": "you don't follow"
+  },
+  "summaryLoading": {
+    "message": "Follcker is checking this list..."
+  },
+  "summaryFollowing": {
+    "message": "$1 of $2 on this page don't follow you back."
+  },
+  "summaryFollowers": {
+    "message": "$1 of $2 on this page you don't follow back."
+  },
+  "summaryAllMutual": {
+    "message": "All $1 on this page are mutual."
+  },
+  "summarySetup": {
+    "message": "Set your GitHub username in the Follcker popup."
+  },
+  "filterShowOnly": {
+    "message": "Show only these"
+  },
+  "filterShowAll": {
+    "message": "Show all"
+  },
+  "helpTitle": {
+    "message": "How to use"
+  },
+  "helpShow": {
+    "message": "How to use"
+  },
+  "helpHide": {
+    "message": "Close help"
+  },
+  "helpStep1": {
+    "message": "Save your GitHub username below."
+  },
+  "helpStep2": {
+    "message": "Turn the switch on."
+  },
+  "helpStep3": {
+    "message": "Open any profile's Following or Followers tab on GitHub."
+  },
+  "helpStep4": {
+    "message": "Every account gets a badge telling you if it follows you back."
+  },
+  "helpNote": {
+    "message": "The token is optional: it only raises GitHub's hourly request limit."
+  },
+  "languageLabel": {
+    "message": "Language"
+  },
+  "languageAuto": {
+    "message": "Automatic"
+  },
+  "usageLabel": {
+    "message": "Requests this hour"
+  },
+  "usageValue": {
+    "message": "$1 of $2"
+  },
+  "usageReset": {
+    "message": "resets in $1 min"
+  },
+  "usageResetSoon": {
+    "message": "resets in under a minute"
+  },
+  "usageUnavailable": {
+    "message": "unavailable"
+  }
+}

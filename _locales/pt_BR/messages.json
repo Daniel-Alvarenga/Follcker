@@ -1,0 +1,194 @@
+{
+  "extName": {
+    "message": "Follcker"
+  },
+  "extDescription": {
+    "message": "Veja quem te segue de volta no GitHub, direto nas páginas de following e followers."
+  },
+  "statusOn": {
+    "message": "Ativo"
+  },
+  "statusOff": {
+    "message": "Pausado"
+  },
+  "statusOnHint": {
+    "message": "As marcações aparecem nas listas do GitHub."
+  },
+  "statusOffHint": {
+    "message": "Ligue para marcar as listas do GitHub."
+  },
+  "toggleLabel": {
+    "message": "Ligar/desligar o Follcker"
+  },
+  "usernameLabel": {
+    "message": "Usuário do GitHub"
+  },
+  "usernamePlaceholder": {
+    "message": "seu-usuario"
+  },
+  "tokenLabel": {
+    "message": "Token de acesso pessoal"
+  },
+  "tokenPlaceholder": {
+    "message": "github_pat_..."
+  },
+  "optional": {
+    "message": "opcional"
+  },
+  "tokenHint": {
+    "message": "Sem token você tem 60 requisições/hora, o que costuma bastar. Um token somente leitura eleva o limite para 5.000/hora."
+  },
+  "tokenHintLink": {
+    "message": "Criar um token"
+  },
+  "revealToken": {
+    "message": "Mostrar token"
+  },
+  "hideToken": {
+    "message": "Ocultar token"
+  },
+  "save": {
+    "message": "Salvar"
+  },
+  "saving": {
+    "message": "Verificando..."
+  },
+  "saved": {
+    "message": "Salvo"
+  },
+  "clear": {
+    "message": "Limpar"
+  },
+  "refresh": {
+    "message": "Atualizar"
+  },
+  "openRepository": {
+    "message": "Abrir repositório"
+  },
+  "cacheEmpty": {
+    "message": "Nenhum dado em cache ainda"
+  },
+  "cacheInfo": {
+    "message": "$1 seguidores · seguindo $2"
+  },
+  "cacheAgeNow": {
+    "message": "atualizado agora"
+  },
+  "cacheAgeMinutes": {
+    "message": "atualizado há $1 min"
+  },
+  "cacheAgeHours": {
+    "message": "atualizado há $1 h"
+  },
+  "grantTitle": {
+    "message": "O Follcker precisa de acesso à api.github.com."
+  },
+  "grantAction": {
+    "message": "Permitir"
+  },
+  "errUsernameRequired": {
+    "message": "Informe seu usuário do GitHub."
+  },
+  "errInvalidToken": {
+    "message": "Token inválido ou expirado."
+  },
+  "errTokenMismatch": {
+    "message": "Esse token pertence a @$1, não a @$2."
+  },
+  "errUserNotFound": {
+    "message": "Usuário @$1 não encontrado no GitHub."
+  },
+  "errRateLimit": {
+    "message": "Limite do GitHub atingido. Tente de novo em $1 min."
+  },
+  "errRateLimitToken": {
+    "message": "Limite do GitHub atingido. Adicione um token para aumentá-lo."
+  },
+  "errNetwork": {
+    "message": "Não foi possível falar com o GitHub. Verifique sua conexão."
+  },
+  "errPermission": {
+    "message": "O acesso à api.github.com não foi concedido."
+  },
+  "errGeneric": {
+    "message": "Algo deu errado: $1"
+  },
+  "badgeFollowsYou": {
+    "message": "te segue"
+  },
+  "badgeNotFollowingYou": {
+    "message": "não te segue"
+  },
+  "badgeYouFollow": {
+    "message": "você segue"
+  },
+  "badgeYouDontFollow": {
+    "message": "você não segue"
+  },
+  "summaryLoading": {
+    "message": "Follcker está verificando esta lista..."
+  },
+  "summaryFollowing": {
+    "message": "$1 de $2 nesta página não te seguem de volta."
+  },
+  "summaryFollowers": {
+    "message": "$1 de $2 nesta página você não segue de volta."
+  },
+  "summaryAllMutual": {
+    "message": "Todos os $1 desta página são mútuos."
+  },
+  "summarySetup": {
+    "message": "Defina seu usuário do GitHub no popup do Follcker."
+  },
+  "filterShowOnly": {
+    "message": "Ver só esses"
+  },
+  "filterShowAll": {
+    "message": "Ver todos"
+  },
+  "helpTitle": {
+    "message": "Como usar"
+  },
+  "helpShow": {
+    "message": "Como usar"
+  },
+  "helpHide": {
+    "message": "Fechar ajuda"
+  },
+  "helpStep1": {
+    "message": "Salve seu usuário do GitHub abaixo."
+  },
+  "helpStep2": {
+    "message": "Ligue a chave."
+  },
+  "helpStep3": {
+    "message": "Abra a aba Following ou Followers de qualquer perfil no GitHub."
+  },
+  "helpStep4": {
+    "message": "Cada conta ganha uma marcação dizendo se ela te segue de volta."
+  },
+  "helpNote": {
+    "message": "O token é opcional: ele só aumenta o limite de requisições por hora do GitHub."
+  },
+  "languageLabel": {
+    "message": "Idioma"
+  },
+  "languageAuto": {
+    "message": "Automático"
+  },
+  "usageLabel": {
+    "message": "Requisições nesta hora"
+  },
+  "usageValue": {
+    "message": "$1 de $2"
+  },
+  "usageReset": {
+    "message": "reinicia em $1 min"
+  },
+  "usageResetSoon": {
+    "message": "reinicia em menos de um minuto"
+  },
+  "usageUnavailable": {
+    "message": "indisponível"
+  }
+}
