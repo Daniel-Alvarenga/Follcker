@@ -9,6 +9,7 @@
  */
 
 const GITHUB_API = "https://api.github.com";
+const GITHUB_ORIGIN = new URL(GITHUB_API).origin;
 const PER_PAGE = 100;
 /** Safety stop: 100 pages x 100 users = 10k accounts per list. */
 const MAX_PAGES = 100;
@@ -49,7 +50,7 @@ function captureRateLimit(response) {
     // `x-ratelimit-used` is not guaranteed; derive it when it is absent or junk.
     used: Number.isFinite(reported) ? reported : Number(limit) - remaining,
     reset: Number(response.headers.get("x-ratelimit-reset")) * 1000,
-    at: Date.now(),
+    at: Date.now()
   };
 
   // Fire and forget: a failed bookkeeping write must never fail the request.
@@ -74,7 +75,7 @@ async function getRateLimit() {
         remaining: Number(core.remaining),
         used: Number(core.used ?? Number(core.limit) - Number(core.remaining)),
         reset: Number(core.reset) * 1000,
-        at: Date.now(),
+        at: Date.now()
       };
       await ext.storage.local.set({ rateLimit: snapshot });
       return snapshot;
@@ -88,6 +89,22 @@ async function getRateLimit() {
 }
 
 /**
+ * Resolves an API path against the GitHub origin and proves the result never
+ * leaves it. Callers only ever pass internal paths, but building the URL by
+ * concatenation gave no guarantee of that; `//evil.example/x` would have
+ * resolved to another host. Now it throws instead.
+ */
+function githubUrl(path) {
+  const url = new URL(path, GITHUB_API);
+
+  if (url.origin !== GITHUB_ORIGIN) {
+    throw new ApiError(t("errGeneric", "invalid request target"), "bad_target");
+  }
+
+  return url;
+}
+
+/**
  * Single authenticated (or anonymous) call to the GitHub REST API.
  * Throws an ApiError with a localized message for every failure mode, so no
  * caller ever has to inspect a raw response again.
@@ -95,13 +112,15 @@ async function getRateLimit() {
 async function ghFetch(path, token) {
   const headers = {
     Accept: "application/vnd.github+json",
-    "X-GitHub-Api-Version": "2022-11-28",
+    "X-GitHub-Api-Version": "2022-11-28"
   };
   if (token) headers.Authorization = `Bearer ${token}`;
 
+  const url = githubUrl(path);
+
   let response;
   try {
-    response = await fetch(`${GITHUB_API}${path}`, { headers, cache: "no-store" });
+    response = await fetch(url, { headers, cache: "no-store" });
   } catch {
     throw new ApiError(t("errNetwork"), "network");
   }
@@ -206,7 +225,7 @@ async function getLists({ force = false } = {}) {
   const { username, token, cache } = await ext.storage.local.get([
     "username",
     "token",
-    "cache",
+    "cache"
   ]);
 
   if (!username) throw new ApiError(t("errUsernameRequired"), "username");
@@ -217,14 +236,14 @@ async function getLists({ force = false } = {}) {
 
   const [followers, following] = await Promise.all([
     fetchAllLogins("followers", username, token),
-    fetchAllLogins("following", username, token),
+    fetchAllLogins("following", username, token)
   ]);
 
   const fresh = {
     username: username.toLowerCase(),
     followers,
     following,
-    fetchedAt: Date.now(),
+    fetchedAt: Date.now()
   };
 
   await ext.storage.local.set({ cache: fresh });

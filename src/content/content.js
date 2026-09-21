@@ -158,7 +158,7 @@ function renderSummary(rows, tone, text, filterTarget) {
  */
 const BADGE_LABELS = {
   following: { yes: "badgeFollowsYou", no: "badgeNotFollowingYou" },
-  followers: { yes: "badgeYouFollow", no: "badgeYouDontFollow" },
+  followers: { yes: "badgeYouFollow", no: "badgeYouDontFollow" }
 };
 
 function annotate(rows, context, lists) {
@@ -214,7 +214,7 @@ async function run() {
 
   const { enabled, username } = await ext.storage.local.get([
     "enabled",
-    "username",
+    "username"
   ]);
   if (!enabled || currentRun !== runId) return;
 

@@ -19,16 +19,28 @@
   },
   "overrides": [
     {
-      "files": ["src/background/*.js"],
-      "env": { "serviceworker": true }
+      "files": [
+        "src/background/*.js"
+      ],
+      "env": {
+        "serviceworker": true
+      }
     },
     {
-      "files": ["src/background/background.js"],
+      "files": [
+        "src/background/background.js"
+      ],
       "globals": {
         "getLists": "readonly",
         "getRateLimit": "readonly",
         "validateCredentials": "readonly"
       }
     }
-  ]
+  ],
+  "rules": {
+    "comma-dangle": [
+      "error",
+      "never"
+    ]
+  }
 }

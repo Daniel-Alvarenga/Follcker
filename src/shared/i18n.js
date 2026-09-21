@@ -25,7 +25,7 @@ globalThis.LOCALES = [
   { id: "bn", name: "বাংলা" },
   { id: "pt_BR", name: "Português (Brasil)" },
   { id: "ru", name: "Русский" },
-  { id: "ur", name: "اردو", rtl: true },
+  { id: "ur", name: "اردو", rtl: true }
 ];
 
 const dictionaries = new Map();
@@ -98,7 +98,7 @@ globalThis.I18N = {
 
   isRtl(id = this.locale) {
     return Boolean(LOCALES.find((l) => l.id === id)?.rtl);
-  },
+  }
 };
 
 /** Localized string, with `$1`, `$2`... substitutions. */

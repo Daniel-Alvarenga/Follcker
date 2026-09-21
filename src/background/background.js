@@ -10,7 +10,7 @@ const DEFAULT_STATE = {
   enabled: false,
   username: "",
   token: "",
-  locale: "auto",
+  locale: "auto"
 };
 
 async function updateBadge(enabled) {
@@ -34,7 +34,7 @@ async function handleMessage(message) {
         "username",
         "token",
         "cache",
-        "locale",
+        "locale"
       ]);
       return {
         ok: true,
@@ -42,7 +42,7 @@ async function handleMessage(message) {
         ...state,
         resolvedLocale: I18N.locale,
         rtl: I18N.isRtl(),
-        locales: LOCALES,
+        locales: LOCALES
       };
     }
 
@@ -60,7 +60,7 @@ async function handleMessage(message) {
         ok: true,
         locale: I18N.locale,
         rtl: I18N.isRtl(),
-        messages: { ...I18N.fallback, ...I18N.messages },
+        messages: { ...I18N.fallback, ...I18N.messages }
       };
     }
 
@@ -112,7 +112,7 @@ ext.runtime.onMessage.addListener((message, _sender, sendResponse) => {
       sendResponse({
         ok: false,
         error: error?.message || t("errGeneric", "unknown"),
-        code: error?.code || "unknown",
+        code: error?.code || "unknown"
       });
     });
 
@@ -128,7 +128,7 @@ async function migrateLegacyStorage() {
   const legacy = await ext.storage.local.get([
     "githubUsername",
     "githubToken",
-    "isExtensionOn",
+    "isExtensionOn"
   ]);
   if (!Object.keys(legacy).length) return;
 
@@ -143,7 +143,7 @@ async function migrateLegacyStorage() {
   await ext.storage.local.remove([
     "githubUsername",
     "githubToken",
-    "isExtensionOn",
+    "isExtensionOn"
   ]);
 }
 

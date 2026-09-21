@@ -36,7 +36,7 @@ const el = {
   clear: document.getElementById("clear"),
   locale: document.getElementById("locale"),
   refresh: document.getElementById("refresh"),
-  cacheInfo: document.getElementById("cache-info"),
+  cacheInfo: document.getElementById("cache-info")
 };
 
 /** Replaces every `data-i18n*` attribute with its localized string. */
@@ -45,7 +45,7 @@ function localize() {
     ["data-i18n", (node, text) => (node.textContent = text)],
     ["data-i18n-placeholder", (node, text) => (node.placeholder = text)],
     ["data-i18n-title", (node, text) => (node.title = text)],
-    ["data-i18n-aria-label", (node, text) => node.setAttribute("aria-label", text)],
+    ["data-i18n-aria-label", (node, text) => node.setAttribute("aria-label", text)]
   ];
 
   for (const [attribute, apply] of bindings) {
@@ -78,7 +78,7 @@ function formatPercent(ratio) {
     return new Intl.NumberFormat(`${localeTag()}-u-nu-latn`, {
       style: "percent",
       minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
+      maximumFractionDigits: 2
     }).format(ratio);
   } catch {
     return `${(ratio * 100).toFixed(2)}%`;
@@ -223,8 +223,8 @@ async function checkHostPermission() {
         } else {
           showBanner(t("errPermission"));
         }
-      },
-    },
+      }
+    }
   });
   return false;
 }
@@ -359,7 +359,7 @@ el.form.addEventListener("submit", async (event) => {
   const response = await send({
     type: MSG.SAVE_CREDENTIALS,
     username,
-    token: el.token.value.trim(),
+    token: el.token.value.trim()
   });
 
   if (!response.ok) {
